@@ -35,12 +35,21 @@ function getRandomQuote(){
   return quotes[x];
 }
 
+//function to display random Quote in html DOM
 function printQuote(){
-  let rex = getRandomQuote();
-  document.getElementsByClassName('quote').textContent = rex.quote;
-  document.getElementsByClassName('source').textContent = rex.source;
-  document.getElementsByClassName('citation').textContent = rex.citation;
-  document.getElementsByClassName('year').textContent = rex.year;
+  let randomQuote = getRandomQuote();
+  document.getElementsByClassName('quote')[0].textContent = randomQuote.quote;
+  document.getElementsByClassName('source')[0].textContent = randomQuote.source;
+  if (randomQuote.citation == ""){
+    document.getElementsByClassName('citation').value = "";
+  }else{
+    document.getElementsByClassName('citation')[0].textContent = randomQuote.citation;
+  }
+  if (randomQuote.year == ""){
+    document.getElementsByClassName('year').value = "";
+  }else{
+    document.getElementsByClassName('year')[0].textContent = randomQuote.year;
+  }
 }
 
 // event listener to respond to "Show another quote" button clicks
