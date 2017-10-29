@@ -31,16 +31,18 @@ quotes =[
 
 //function to return a random quote object from the array
 function getRandomQuote(){
-  return quotes[Math.floor(Math.random() * quotes.length)];
+  let x = Math.floor(Math.random() * quotes.length);
+  return quotes[x];
 }
 
 function printQuote(){
-  document.getElementsByClassName('quote').innerHTML = getRandomQuote()['quote'];
-  document.getElementsByClassName('source').innerHTML = getRandomQuote()['source'];
-  document.getElementsByClassName('citation').innerHTML = getRandomQuote()['citation'];
-  document.getElementsByClassName('year').innerHTML = getRandomQuote()['year'];
+  let rex = getRandomQuote();
+  document.getElementsByClassName('quote').textContent = rex.quote;
+  document.getElementsByClassName('source').textContent = rex.source;
+  document.getElementsByClassName('citation').textContent = rex.citation;
+  document.getElementsByClassName('year').textContent = rex.year;
 }
 
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
-document.getElementById('loadQuote').addEventListener("click", printQuote(), false);
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
