@@ -6,8 +6,8 @@ quotes =[
   {
     quote:"To err is human; to forgive, divine",
     source:"Alexander Pope",
-    citation:"",
-    year:""
+    citation:"An Essay on Criticism",
+    year:"1711"
   },
   {
     quote:"To love is to act",
@@ -40,17 +40,9 @@ function printQuote(){
   let randomQuote = getRandomQuote();
   document.getElementsByClassName('quote')[0].textContent = randomQuote.quote;
   document.getElementsByClassName('source')[0].textContent = randomQuote.source;
-  if (randomQuote.citation == ""){
-    document.getElementsByClassName('citation').value = "";
-  }else{
-    document.getElementsByClassName('citation')[0].textContent = randomQuote.citation;
+  document.getElementsByClassName('citation')[0].textContent = randomQuote.citation;
+  document.getElementsByClassName('year')[0].textContent = randomQuote.year;
   }
-  if (randomQuote.year == ""){
-    document.getElementsByClassName('year').value = "";
-  }else{
-    document.getElementsByClassName('year')[0].textContent = randomQuote.year;
-  }
-}
 
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
